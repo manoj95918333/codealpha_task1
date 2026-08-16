@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Scoring Model</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Credit Scoring Model</h1>
+
+        <p class="subtitle">
+            Enter the customer's financial details to predict creditworthiness.
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="Age">Age</label>
+                    <input type="number" id="Age" name="Age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Annual_Income">Annual Income</label>
+                    <input type="number" id="Annual_Income" name="Annual_Income" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Total_Debt">Total Debt</label>
+                    <input type="number" id="Total_Debt" name="Total_Debt" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Credit_History_Years">Credit History Years</label>
+                    <input type="number"
+                           id="Credit_History_Years"
+                           name="Credit_History_Years"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Payment_History">Payment History</label>
+
+                    <select id="Payment_History"
+                            name="Payment_History"
+                            required>
+
+                        <option value="">Select</option>
+                        <option value="0">Poor (0)</option>
+                        <option value="1">Average (1)</option>
+                        <option value="2">Good (2)</option>
+                        <option value="3">Excellent (3)</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Loan_Count">Loan Count</label>
+                    <input type="number"
+                           id="Loan_Count"
+                           name="Loan_Count"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Credit_Utilization_Percent">
+                        Credit Utilization Percent
+                    </label>
+
+                    <input type="number"
+                           step="0.1"
+                           id="Credit_Utilization_Percent"
+                           name="Credit_Utilization_Percent"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Late_Payments">Late Payments</label>
+
+                    <input type="number"
+                           id="Late_Payments"
+                           name="Late_Payments"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Employment_Years">Employment Years</label>
+
+                    <input type="number"
+                           id="Employment_Years"
+                           name="Employment_Years"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Savings">Savings</label>
+
+                    <input type="number"
+                           id="Savings"
+                           name="Savings"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Number_of_Credit_Cards">
+                        Number of Credit Cards
+                    </label>
+
+                    <input type="number"
+                           id="Number_of_Credit_Cards"
+                           name="Number_of_Credit_Cards"
+                           required>
+                </div>
+
+            </div>
+
+            <button type="submit">
+                Check Creditworthiness
+            </button>
+
+        </form>
+
+
+        <!-- Prediction Result -->
+
+        {% if result %}
+
+        <div class="result">
+
+            <h2>Prediction</h2>
+
+            <p>{{ result }}</p>
+
+            <p>
+                Confidence: {{ confidence }}%
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</body>
+</html>
