@@ -1,12 +1,35 @@
-# Credit Scoring Model — Final Result
+
+# Credit Scoring Model
+
+## Project Overview
+
+This project predicts an individual's creditworthiness using past financial data.
+
+The project uses a Machine Learning model and provides a web interface where users can enter financial details and receive a creditworthiness prediction with confidence.
 
 ## Objective
-Predict an individual's creditworthiness using past financial data.
+
+To predict whether an individual is creditworthy based on their financial history and related financial features.
 
 ## Model Used
-Random Forest Classifier
+
+- Random Forest Classifier
+
+## Technologies Used
+
+- Python
+- Flask
+- NumPy
+- Pandas
+- Scikit-learn
+- Joblib
+- HTML
+- CSS
 
 ## Financial Features Used
+
+The model uses the following features:
+
 - Age
 - Annual Income
 - Total Debt
@@ -18,17 +41,3 @@ Random Forest Classifier
 - Employment Years
 - Savings
 - Number of Credit Cards
-
-## Model Evaluation
-The model was evaluated using:
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- ROC-AUC
-
-## ROC-AUC Score
-0.92
-
-## Conclusion
-The trained Random Forest model can be used to predict the creditworthiness of an individual based on their financial history.
